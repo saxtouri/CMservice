@@ -3,81 +3,84 @@
         # more human-friendly and avoid "u'" prefix for unicode strings in list
         if isinstance(claim, list):
             claim = ", ".join(claim)
+        if claim.startswith('['):
+            claim = claim[1:]
+        if claim.startswith('\''):
+            claim = claim[1:]
+        if claim.endswith(']'):
+            claim = claim[:-1]
+        if claim.endswith('\''):
+            claim = claim[:-1]
         return claim
 %>
 
 <%inherit file="base.mako"/>
 
 <%block name="head_title">Consent</%block>
-<%block name="page_header">${_("Consent - Your consent is required to continue.")}</%block>
+<%block name="page_header">${_("Your consent is required to continue.")}</%block>
 <%block name="extra_inputs">
     <input type="hidden" name="state" value="${ state }">
 </%block>
 
 ## ${_(consent_question)}
 
-<br>
-<hr>
-
-<div><b>${requester_name}</b> ${_("would like to access the following attributes:")}</div>
-<br>
-
-<div style="clear: both;">
+<div class="list-group">
+    <p class="small">
+      <b>${requester_name}</b> 
+         ${_("would like to access the following attributes:")}
+    </p>
     % for attribute in released_claims:
-        <strong>${_(attribute).capitalize()}</strong>
-        <br>
-
-        <div class="attribute">
-            <input type="checkbox"
-                   name="${attribute.lower()}"
-                   value="${released_claims[attribute] | list2str}"
-                   checked>
-            ${released_claims[attribute] | list2str}
+        <div class="checkbox list-group-item">
+          <h4 class="list-group-item-heading">
+          </h4>
+            <label><input type="checkbox"
+                 name="${attribute.lower()}"
+                 value="${released_claims[attribute] | list2str}"
+                 checked>
+                 &nbsp;<span>${_(attribute).capitalize()}</span>:&nbsp;
+                 <span>${released_claims[attribute] | list2str}</span>
+            </label>
         </div>
     % endfor
-</div>
 
-% if locked_claims:
+    % if locked_claims:
+      <p class="small">${_("The following attributes is not optional. If you don't want to send these you need to abort.")}</p>
+      % for attribute in locked_claims:
+      <div class="list-group-item">
+        <span> ${_(attribute).capitalize()}</span>:&nbsp;
+        <span>${locked_claims[attribute] | list2str}</span>
+      </div>
+      % endfor
+    % endif
+    <div class="row"><hr/></div>
 
-<div style="clear: both;" class="locked_attr_div">
-    <hr>
-    <h3>${_("Locked attributes")}</h3>
-    <p>${_("The following attributes is not optional. If you don't want to send these you need to abort.")}</p>
-    % for attribute in locked_claims:
-        <strong class="attr_header">${_(attribute).capitalize()}</strong>
-        <br>
-        <div class="locked_attribute">
-            ${locked_claims[attribute] | list2str}
-        </div>
-    % endfor
-</div>
-% endif
-<br>
+    <div class="row">
+      <div class="col-md-10">
+        <h5>${_("For how many month do you want to give consent for this particular service:")}</h5>
+      </div>
+      <div class="col-md-2 aligh-right sp-col-2">
+        <form name="allow_consent" id="allow_consent_form"
+              action="save_consent" method="GET">
+        <select name="month" id="month">
+            % for month in months:
+                <option value="${month}">${month}</option>
+            % endfor
+        </select>
+      </div>
+    </div>
 
-<span style="float: left;">
-    ${_("For how many month do you want to give consent for this particular service:")}
-</span>
-<br>
-
-<form name="allow_consent" id="allow_consent_form" action="/save_consent" method="GET"
-      style="float: left">
-    <select name="month" id="month" class="dropdown-menu-right">
-        % for month in months:
-            <option value="${month}">${month}</option>
-        % endfor
-    </select>
-    <br>
-    <br>
-    <input name="Yes" value="${_('Ok, accept')}" id="submit_ok" type="submit">
-    <input name="No" value="${_('No, cancel')}" id="submit_deny" type="submit">
-
-    <input type="hidden" id="attributes" name="attributes"/>
-    <input type="hidden" id="consent_status" name="consent_status"/>
+    <div class="row clearfix"><br/></div>
+    <div class="btn-block">
+      <input name="Yes" value="${_('Ok, accept')}" id="submit_ok"
+             type="submit" class="btn btn-primary">
+      <input name="No" value="${_('No, cancel')}" id="submit_deny"
+             type="submit" class="btn btn-warning">
+     </div>
+      <input type="hidden" id="attributes" name="attributes"/>
+      <input type="hidden" id="consent_status" name="consent_status"/>
     ${extra_inputs()}
-</form>
-<br>
-<br>
-<br>
+    </form>
+</div>
 
 <script>
     $('input:checked').each(function () {
