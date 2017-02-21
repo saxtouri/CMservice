@@ -44,13 +44,16 @@
     % endfor
 
     % if locked_claims:
-      <p class="small">${_("You also give consent for the following:")}</p>
-      % for attribute in locked_claims:
-      <div class="list-group-item">
-        <span> ${_(attribute).capitalize()}</span>:&nbsp;
-        <span>${locked_claims[attribute] | list2str}</span>
+      <div class="btn btn-link"
+           onclick="$('#locked').toggleClass('hidden');">
+        <h4 class="small">${_("Click to see what else is sent with your consent")}</h4>
+        <div class="hidden list-group-item" id="locked">
+        % for attribute in locked_claims:
+          <span> ${_(attribute).capitalize()}</span>:&nbsp;
+          <span>${locked_claims[attribute] | list2str}</span>
+        % endfor
+        </div>
       </div>
-      % endfor
     % endif
     <div class="row"><hr/></div>
 

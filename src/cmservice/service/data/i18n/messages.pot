@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CMservice 2.0.2\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-02-21 17:59+0200\n"
+"POT-Creation-Date: 2017-02-21 18:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgstr ""
 msgid "would like to access the following attributes:"
 msgstr ""
 
-#: src/cmservice/service/templates/consent.mako:47
-msgid "You also give consent for the following:"
+#: src/cmservice/service/templates/consent.mako:49
+msgid "Click to see what else is sent with your consent"
 msgstr ""
 
-#: src/cmservice/service/templates/consent.mako:59
+#: src/cmservice/service/templates/consent.mako:62
 msgid "For how long you give consent for this service?"
 msgstr ""
 
-#: src/cmservice/service/templates/consent.mako:67
+#: src/cmservice/service/templates/consent.mako:70
 msgid "months"
 msgstr ""
 
-#: src/cmservice/service/templates/consent.mako:76
+#: src/cmservice/service/templates/consent.mako:79
 msgid "OK, accept"
 msgstr ""
 
-#: src/cmservice/service/templates/consent.mako:78
+#: src/cmservice/service/templates/consent.mako:81
 msgid "No, cancel"
 msgstr ""
 
-#: src/cmservice/service/templates/consent.mako:109
+#: src/cmservice/service/templates/consent.mako:112
 msgid "No attributes where selected which equals no consent where given"
 msgstr ""
 

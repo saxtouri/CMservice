@@ -18,35 +18,35 @@ msgstr ""
 "Generated-By: Babel 1.3\n"
 
 #: src/cmservice/service/templates/consent.mako:20
-msgid "Consent - Your consent is required to continue."
-msgstr "Samtycke - Ditt medgivande krävs för att fortsätta."
+msgid "Your consent is required to continue."
+msgstr "Ditt medgivande krävs för att fortsätta."
 
 #: src/cmservice/service/templates/consent.mako:30
 msgid "would like to access the following attributes:"
 msgstr "vill få tillgång till följande attribut:"
 
-#: src/cmservice/service/templates/consent.mako:47
-msgid "You also give consent for the following:"
-msgstr "Följande attribut går inte att välja bort. Om du inte vill skicka dessa måste du avbrya."
+#: src/cmservice/service/templates/consent.mako:49
+msgid "Click to see what else is sent with your consent"
+msgstr "Klicka för att se vad är också skickas med ditt medgivande"
 
-#: src/cmservice/service/templates/consent.mako:59
+#: src/cmservice/service/templates/consent.mako:62
 msgid "For how long do you give consent for this service?"
 msgstr "För hur länge vill du ge samtycke for den angivna tjänsten:"
 Hur länge tror du ger tillstånd till den angivna tjänsten
 
-#: src/cmservice/service/templates/consent.mako:67
+#: src/cmservice/service/templates/consent.mako:70
 msgid "months"
 msgstr "månader"
 
-#: src/cmservice/service/templates/consent.mako:76
+#: src/cmservice/service/templates/consent.mako:79
 msgid "OK, accept"
 msgstr "Ja, acceptera"
 
-#: src/cmservice/service/templates/consent.mako:78
+#: src/cmservice/service/templates/consent.mako:81
 msgid "No, cancel"
 msgstr "Nej, avbryt"
 
-#: src/cmservice/service/templates/consent.mako:109
+#: src/cmservice/service/templates/consent.mako:112
 msgid "No attributes where selected which equals no consent where given"
 msgstr "Inga attribut har angets, vilket är equivalent med att inte ge samtycke överhuvudtaget"
 

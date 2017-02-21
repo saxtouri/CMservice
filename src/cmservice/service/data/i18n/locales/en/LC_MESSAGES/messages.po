@@ -25,27 +25,27 @@ msgstr "Your consent is required to continue."
 msgid "would like to access the following attributes:"
 msgstr "would like to access the following attributes:"
 
-#: src/cmservice/service/templates/consent.mako:47
-msgid "You also give consent for the following:"
-msgstr "You also give consent for the following:"
+#: src/cmservice/service/templates/consent.mako:49
+msgid "Click to see what else you sent with your consent"
+msgstr "Click to see what else you sent with your consent"
 
-#: src/cmservice/service/templates/consent.mako:59
+#: src/cmservice/service/templates/consent.mako:62
 msgid "For how long do you give consent for this service?"
 msgstr "For how long do you give consent for this service?"
 
-#: src/cmservice/service/templates/consent.mako:67
+#: src/cmservice/service/templates/consent.mako:70
 msgid "months"
 msgstr "months"
 
-#: src/cmservice/service/templates/consent.mako:76
+#: src/cmservice/service/templates/consent.mako:79
 msgid "OK, accept"
 msgstr "OK, accept"
 
-#: src/cmservice/service/templates/consent.mako:78
+#: src/cmservice/service/templates/consent.mako:81
 msgid "No, cancel"
 msgstr "No, cancel"
 
-#: src/cmservice/service/templates/consent.mako:109
+#: src/cmservice/service/templates/consent.mako:112
 msgid "No attributes where selected which equals no consent where given"
 msgstr "No attributes where selected which equals no consent where given"
 
