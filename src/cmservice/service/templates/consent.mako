@@ -44,7 +44,7 @@
     % endfor
 
     % if locked_claims:
-      <p class="small">${_("The following attributes is not optional. If you don't want to send these you need to abort.")}</p>
+      <p class="small">${_("You also give consent for the following:")}</p>
       % for attribute in locked_claims:
       <div class="list-group-item">
         <span> ${_(attribute).capitalize()}</span>:&nbsp;
@@ -56,14 +56,16 @@
 
     <div class="row">
       <div class="col-md-10">
-        <h5>${_("For how many month do you want to give consent for this particular service:")}</h5>
+        <h5>${_("For how long do you give consent to this service?")}</h5>
       </div>
       <div class="col-md-2 aligh-right sp-col-2">
         <form name="allow_consent" id="allow_consent_form"
               action="save_consent" method="GET">
         <select name="month" id="month">
             % for month in months:
-                <option value="${month}">${month}</option>
+                <option value="${month}">
+                    <span>${month}</span> <span> ${_("months")}</span>
+                </option>
             % endfor
         </select>
       </div>
@@ -71,7 +73,7 @@
 
     <div class="row clearfix"><br/></div>
     <div class="btn-block">
-      <input name="Yes" value="${_('Ok, accept')}" id="submit_ok"
+      <input name="Yes" value="${_('OK, accept')}" id="submit_ok"
              type="submit" class="btn btn-primary">
       <input name="No" value="${_('No, cancel')}" id="submit_deny"
              type="submit" class="btn btn-warning">

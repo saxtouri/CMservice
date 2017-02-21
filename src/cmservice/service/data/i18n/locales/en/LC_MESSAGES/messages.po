@@ -17,38 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: src/cmservice/service/templates/consent.mako:12
-msgid "Consent - Your consent is required to continue."
-msgstr "Consent - Your consent is required to continue."
+#: src/cmservice/service/templates/consent.mako:20
+msgid "Your consent is required to continue."
+msgstr "Your consent is required to continue."
 
-#: src/cmservice/service/templates/consent.mako:22
+#: src/cmservice/service/templates/consent.mako:30
 msgid "would like to access the following attributes:"
 msgstr "would like to access the following attributes:"
 
-#: src/cmservice/service/templates/consent.mako:44
-msgid "Locked attributes"
-msgstr "Locked attributes"
+#: src/cmservice/service/templates/consent.mako:47
+msgid "You also give consent for the following:"
+msgstr "You also give consent for the following:"
 
-#: src/cmservice/service/templates/consent.mako:45
-msgid ""
-"The following attributes is not optional. If you don't want to send these"
-" you need to abort."
-msgstr "The following attributes is not optional. If you don't want to send these"
-" you need to abort."
+#: src/cmservice/service/templates/consent.mako:59
+msgid "For how long do you give consent for this service?"
+msgstr "For how long do you give consent for this service?"
 
-#: src/cmservice/service/templates/consent.mako:58
-msgid "For how many month do you want to give consent for this particular service:"
-msgstr "For how many month do you want to give consent for this particular service:"
+#: src/cmservice/service/templates/consent.mako:67
+msgid "months"
+msgstr "months"
 
-#: src/cmservice/service/templates/consent.mako:71
-msgid "Ok, accept"
-msgstr "Ok, accept"
+#: src/cmservice/service/templates/consent.mako:76
+msgid "OK, accept"
+msgstr "OK, accept"
 
-#: src/cmservice/service/templates/consent.mako:72
+#: src/cmservice/service/templates/consent.mako:78
 msgid "No, cancel"
 msgstr "No, cancel"
 
-#: src/cmservice/service/templates/consent.mako:104
+#: src/cmservice/service/templates/consent.mako:109
 msgid "No attributes where selected which equals no consent where given"
 msgstr "No attributes where selected which equals no consent where given"
 
