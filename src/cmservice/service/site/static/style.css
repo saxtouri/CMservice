@@ -171,6 +171,7 @@ pre.prettyprint {
 
 .logo {
     max-height: 100px;
+    margin-bottom: 1em;
 }
 
 .fallback {

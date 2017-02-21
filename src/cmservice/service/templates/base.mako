@@ -24,8 +24,8 @@
 <div class="container">
   <div class="header text-muted">
     <div class="row">
-      <div class="col-md-10 sp-title-container">
-        <h3 class="sp"><%block name="page_header"></%block></h3>
+      <div class="col-md-10 sp-icon-container logo">
+        <img src="/static/InAcademia.png">
       </div>
       <!-- Language selection -->
       <div class="col-md-2 align-right sp-col-2">
@@ -37,6 +37,9 @@
           <%block name="extra_inputs"></%block>
         </form>
       </div>
+    </div>
+    <div class="row col-md-12 sp-title-container">
+      <h3 class="sp"><%block name="page_header"></%block></h3>
     </div>
     <div class="row clearfix"></div>
   </div>
