@@ -13,44 +13,45 @@
     <meta http-equiv="content-type" content="text/html;" charset="utf-8"/>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome.min.css">
     <link rel="stylesheet" href="/static/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 
-<div class="row">
-    <div class="wrapper col-md-8 col-md-offset-2">
-        <div class="title row">
-            <div class="col-md-11">
-                <h1><%block name="page_header"></%block></h1>
-            </div>
-            <!-- Language selection -->
-            <div class="col-md-1">
-                <form action="${form_action}" method="GET">
-                    <select name="lang" id="lang" onchange="this.form.submit()"
-                            class="dropdown-menu-right">
-                        <option value="en">EN</option>
-                        <option value="sv">SV</option>
-                    </select>
-                    <%block name="extra_inputs"></%block>
-                </form>
-            </div>
-        </div>
-
-        ${self.body()}
-
-        <hr>
-        <footer>
-        </footer>
+<div class="container">
+  <div class="header text-muted">
+    <div class="row">
+      <div class="col-md-10 sp-icon-container logo">
+        <img class="eduteams-logo" src="/static/eduteams_logo.png">
+      </div>
+      <!-- Language selection -->
+      <div class="col-md-2 align-right sp-col-2">
+        <form action="${form_action}" method="GET">
+          <select name="lang" id="lang" onchange="this.form.submit()">
+              <option value="en">EN</option>
+              <option value="sv">SV</option>
+          </select>
+          <%block name="extra_inputs"></%block>
+        </form>
+      </div>
     </div>
-</div>
+    <div class="row col-md-12 sp-title-container">
+      <h3 class="sp"><%block name="page_header"></%block></h3>
+    </div>
+    <div class="row clearfix"></div>
+  </div>
+  <div class="row">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
 
+  <div class="content">${self.body()}</div>
+  <footer></footer>
+</div>
 
 <script type="application/javascript">
     "use strict";
-
     // Mark the selected language in the dropdown
     var lang = "${language}";
     var lang_option = document.querySelector("option[value=" + lang + "]");
